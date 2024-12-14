@@ -1,0 +1,134 @@
+/workspaces/HALL_BOOKING_SYS
+│
+├── /config
+│   └── generateToken.js
+│
+├── /controllers
+│   ├── admin.js
+│   ├── auth.js
+│   ├── booking.js
+│   ├── halls.js
+│   └── staff.js
+│
+├── /Frontend
+│   ├── /dist
+│   │   └── output.css
+│   ├── /public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── /src
+│   │   ├── /assets
+│   │   │   ├── admin_profile_icon.png
+│   │   │   ├── calendar_icon_grey.png
+│   │   │   ├── calendar_icon_white.png
+│   │   │   ├── CEG_main_logo.png
+│   │   │   ├── ceg.jpeg
+│   │   │   ├── dashboard_icon_grey.png
+│   │   │   ├── dashboard_icon_white.png
+│   │   │   ├── email_id_input.png
+│   │   │   ├── hall_icon_grey.png
+│   │   │   ├── hall_icon_white.png
+│   │   │   ├── logout_icon_grey.png
+│   │   │   ├── message_icon_grey.png
+│   │   │   ├── message_icon_white.png
+│   │   │   ├── password_input.png
+│   │   │   ├── Patics Logo.png
+│   │   │   ├── PCAS.jpg
+│   │   │   ├── vivekanandha_audit_1.jpg
+│   │   │   └── vivekanandha_audit_2.jpeg
+│   │   │
+│   │   ├── /components
+│   │   │   ├── admin_dashboard_main.js
+│   │   │   ├── admin_dashboard_pending_requests.js
+│   │   │   ├── admin_dashboard_sidebar.js
+│   │   │   ├── Admin_Login.js
+│   │   │   ├── calendar.js
+│   │   │   ├── events.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Header.js
+│   │   │   ├── HomePageCenterContent.js
+│   │   │   ├── HomePageHeader.js
+│   │   │   ├── LoginCenterContent.js
+│   │   │   ├── popup_modal.js
+│   │   │   ├── RegisterCenterContent.js
+│   │   │   ├── staff_dashboard_booking_form.js
+│   │   │   ├── staff_dashboard_hall_booking.js
+│   │   │   ├── staff_dashboard_hall_details.js
+│   │   │   ├── staff_dashboard_main.js
+│   │   │   ├── staff_dashboard_navbar.js
+│   │   │   ├── staff_dashboard_pending_requests.js
+│   │   │   └── staff_dashboard_sidebar.js
+│   │   ├── /views
+│   │   │   ├── AdminDashboardHallAvailability.js
+│   │   │   ├── AdminDashboardMainPage.js
+│   │   │   ├── AdminDashboardPendingRequests.js
+│   │   │   ├── StaffDashboardHallAvailability.js
+│   │   │   ├── StaffDashboardHallBookingMain.js
+│   │   │   ├── StaffDashboardMainPage.js
+│   │   │   └── StaffDashboardPendingRequests.js
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── reportWebVitals.js
+│   │   └── setupTests.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   └── tailwind.config.js
+│
+├── /middleware
+│   ├── adminVerify.js
+│   └── authmiddleware.js
+│
+├── /models
+│   ├── AdminModel.js
+│   ├── BookingModel.js
+│   ├── HallsModel.js
+│   └── staffModel.js
+│
+├── /routes
+│   ├── admin.js
+│   ├── auth.js
+│   ├── booking.js
+│   ├── halls.js
+│   └── student.js
+│
+├── /utils
+│   ├── AutoIncrement.js
+│   └── error.js
+│
+├── index.js
+├── package-lock.json
+├── package.json
+└── README.md
+
+
+
+
+PCAS HALL BOOKING LINK TO DATABASE
+
+mongodb+srv://mukbambot118:jBJTqW63JZ4ocHMz@pcashallbooking.yxbud.mongodb.net/?retryWrites=true&w=majority&appName=PcasHallBooking
+
+OR
+
+
+const mongoose = require('mongoose');
+const uri = "mongodb+srv://mukbambot118:jBJTqW63JZ4ocHMz@pcashallbooking.yxbud.mongodb.net/?retryWrites=true&w=majority&appName=PcasHallBooking";
+
+const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
+
+async function run() {
+  try {
+    // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
+    await mongoose.connect(uri, clientOptions);
+    await mongoose.connection.db.admin().command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await mongoose.disconnect();
+  }
+}
+run().catch(console.dir);

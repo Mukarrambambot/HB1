@@ -1,0 +1,26 @@
+{
+  "name": "hall_booking_sys",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node index.js",
+    "client": "set NODE_OPTIONS=--openssl-legacy-provider && npm start --prefix Frontend"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^5.13.22",
+    "react-router": "^7.0.1",
+    "react-router-dom": "^7.0.1",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
